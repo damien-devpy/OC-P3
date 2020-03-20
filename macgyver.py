@@ -49,9 +49,9 @@ class MacGyver:
 		elif input_user == configuration.LEFT:
 			self._left()	
 			
-	# def dead_mac(self):
-		#Killing MacGyver
-		#pass
+	def killing_mac(self):
+		self.life = 0
+		self.position = 0
 		
 	
 		
