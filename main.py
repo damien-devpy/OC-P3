@@ -35,7 +35,7 @@ def terminal_mode():
 		#Applying user input to MacGyver
 		
 		if hero.position == pnj.position:
-			if stuff.items_carried == 3:
+			if stuff.items_carried == len(configuration.ITEMS_TO_PICKED):
 				pnj.killing_guard()
 				displaying.refresh(structure, hero, stuff, pnj)
 				print('Congratulations, you won!\n')

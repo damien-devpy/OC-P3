@@ -19,7 +19,7 @@ WALLS_TO_DISPLAY = '#' #Choosing how we want to display walls
 HALLWAYS_TO_DISPLAY = ' ' #Choosing how we want to display hallways
 
 ITEMS_TO_PICKED = {
-					'syringe', 
-					'pipe', 
-					'ether',
+					'syringe': '>', 
+					'pipe': '-', 
+					'ether': 'o',
 				}

@@ -16,7 +16,7 @@ class Items:
 		Choose (number of items) random position in decor_object.hallways
 		for dropping them in the maze
 		'''
-		list_of_items = configuration.ITEMS_TO_PICKED.copy()
+		list_of_items = (item for item in configuration.ITEMS_TO_PICKED.keys())
 		hallways_copy = hallways.copy()
 		items_positions = dict()
 		
@@ -26,7 +26,7 @@ class Items:
 			#Choosing one hallway cell randomly
 			hallways_copy.discard(random_position) 
 			#Removing choosed position, avoiding choising the same more then once
-			items_positions[random_position] = list_of_items.pop()
+			items_positions[random_position] = next(list_of_items)
 			#Assigning our item the position choosen
 		return items_positions
 			

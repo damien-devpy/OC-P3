@@ -11,13 +11,15 @@ class DisplayTerminalMode:
 				items_object, 
 				guard_object,
 				):
+		'''
+		Call to display_decor() at each move to refresh display
+		'''
 				
 		self._display_decor(decor_object, 
 							macgyver_object, 
 							items_object, 
 							guard_object,
 							)
-		#Display is refreshed every movement
 		
 	def _display_decor(self, 
 						decor_object, 
@@ -26,7 +28,9 @@ class DisplayTerminalMode:
 						guard_object
 						):
 						
-		#Displaying decor
+		'''
+		Display decor considering position of MacGyver, items and guard
+		'''
 		for height in range(configuration.SIZE_MAZE):
 			for length in range(configuration.SIZE_MAZE):
 				
@@ -51,12 +55,11 @@ class DisplayTerminalMode:
 			print()
 		
 	def _display_items(self, coordinates, items_positions):
-		if items_positions[coordinates] == 'syringe':
-			print('>', end='')
-		elif items_positions[coordinates] == 'pipe':
-			print('-', end='')
-		elif items_positions[coordinates] == 'ether':
-			print('o', end='')
+		'''
+		Display item key's dict that match actual coordinate in items_positions dict
+		'''
+		print(configuration.ITEMS_TO_PICKED[items_positions[coordinates]], end='')
+
 		
 	def _display_mac(self):
 		print('.', end='')
