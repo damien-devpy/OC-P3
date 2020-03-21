@@ -30,22 +30,22 @@ class DisplayTerminalMode:
 		for height in range(configuration.SIZE_MAZE):
 			for length in range(configuration.SIZE_MAZE):
 				
-				if (height, length) == macgyver_object.position:
+				if (length, height) == macgyver_object.position:
 					#If coordinates matches MacGyver position, display him
 					self._display_mac()
-				elif (height, length) in items_object.positions:
+				elif (length, height) in items_object.positions:
 					#If coordinates matches an item position, display it
-					self._display_items((height, length), items_object.positions)
-				elif (height, length) == guard_object.position:
+					self._display_items((length, height), items_object.positions)
+				elif (length, height) == guard_object.position:
 					#If coordinates matches an guard position, display him
 					self._display_guard()
-				elif (height, length) in decor_object.walls:
+				elif (length, height) in decor_object.walls:
 					#Finally, if coordinates matches a wall, display it
 					print(configuration.WALLS_TO_DISPLAY, end='')
-				elif (height, length) in decor_object.hallways:
+				elif (length, height) in decor_object.hallways:
 					#Or a hallway, display it
 					print(configuration.HALLWAYS_TO_DISPLAY, end='')
-				elif (height, length) == decor_object.enter:
+				elif (length, height) == decor_object.enter:
 					#If it's the enter of the maze, display it too.
 					print(' ', end='')
 			print()

@@ -1,5 +1,3 @@
-""" -tc- Ajouter une docstring."""
-
 import configuration
 
 class MacGyver:
@@ -8,49 +6,55 @@ class MacGyver:
 	'''
 
 	def __init__(self, decor_object):
-		""" -tc- Ajouter une docstring."""
-		# -tc- stocker decor_object également en attribut
-		self.position = decor_object.enter
-		self.life = 50 # -tc- Mieux d'ajouter un compteur d'objet ou une liste dans laquelle accumuler les objets. Ici, le concept de vie n'a pas vraiment de sens
+		'''
+		Initializing MacGyver attributes
+		position and a attribute containing Decor() instance
+		'''
+		self.decor_object = decor_object
+		self.position = self.decor_object.enter
 		
 		
 	def _up(self):
-		""" -tc- Ajouter une docstring."""
-		#Changing Mac attribute position for getting him up
+		'''
+		If the user choosing Mac going up, making him up
+		'''
 		self.position = (
-			self.position[0]-1, 
-			self.position[1],
+			self.position[0], 
+			self.position[1]-1,
 		)
 		
 	def _right(self):
-		""" -tc- Ajouter une docstring."""
-		#... getting him right
-		self.position = (
-			self.position[0],
-			self.position[1]+1,
-		)
-		
-	def _down(self):
-		""" -tc- Ajouter une docstring."""
-		#... getting him down
+		'''
+		If the user choosing Mac going right, making him right
+		'''
 		self.position = (
 			self.position[0]+1,
 			self.position[1],
 		)
 		
-	def _left(self):
-		""" -tc- Ajouter une docstring."""
-		#... getting him left
+	def _down(self):
+		'''
+		If the user choosing Mac going down, making him down
+		'''
 		self.position = (
 			self.position[0],
-			self.position[1]-1,
+			self.position[1]+1,
 		)
 		
-	def movement(self, input_user):
-		""" -tc- Ajouter une docstring."""
-		#Moving MacGyver
-		# -tc- attention, tu dois vérifier que la position est autorisée avant de bouger. Ou bouger, comme tu le fais, mais 
-		# -tc- revenir en arrière si la nouvelle position n'est pas un hallway.
+	def _left(self):
+		'''
+		If the user choosing Mac going left, making him left
+		'''
+		self.position = (
+			self.position[0]-1,
+			self.position[1],
+		)
+		
+	def movement(self, input_user, previous_position):
+		'''
+		Making move MacGyver and checking if he's going into a wall
+		If so, going to previous_position
+		'''
 		if input_user == configuration.UP:
 			self._up()
 		elif input_user == configuration.RIGHT:
@@ -58,10 +62,16 @@ class MacGyver:
 		elif input_user == configuration.DOWN:
 			self._down()
 		elif input_user == configuration.LEFT:
-			self._left()	
+			self._left()
+
+		#If we move into a wall, we going back
+		if self.decor_object.is_not_hallways(self):
+			self.position = previous_position
 			
 	def killing_mac(self):
-		self.life = 0
+		'''
+		Mac has been killed by guard. Deleting his position
+		'''
 		self.position = 0
 		
 	

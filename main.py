@@ -6,7 +6,7 @@ from guard import Guard
 from displayterminalmode import DisplayTerminalMode
 import os
 	
-def main():
+def terminal_mode():
 	
 	structure = Decor(configuration.FILE)
 	hero = MacGyver(structure)
@@ -25,17 +25,16 @@ def main():
 		#Displaying decor
 		
 		choice = input()
+		print()
 		#Asking user wiche way he want to drive MacGyver
 		
 		previous_position = hero.position
 		#Storing current position of Mac, in case user drive into a wall
 		
-		hero.movement(choice)
+		hero.movement(choice, previous_position)
 		#Applying user input to MacGyver
 		
-		if structure.is_hallways(hero):
-			continue
-		elif hero.position == pnj.position:
+		if hero.position == pnj.position:
 			if stuff.items_carried == 3:
 				pnj.killing_guard()
 				displaying.refresh(structure, hero, stuff, pnj)
@@ -46,13 +45,10 @@ def main():
 				displaying.refresh(structure, hero, stuff, pnj)
 				print('The guard killed you, pick up more stuff\n')
 				break
-		else: #If user choose a way to a wall, going back to previous posistion
-			hero.position = previous_position
-			continue
 	
 	os.system('pause')
 	
-main()	
+terminal_mode()	
 
 
 	

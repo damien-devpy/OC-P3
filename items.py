@@ -12,8 +12,10 @@ class Items:
 		
 		
 	def _dropping_items(self, hallways):
-		#Choose random position in decor_objects.hallways
-		#for dropping items
+		'''
+		Choose (number of items) random position in decor_object.hallways
+		for dropping them in the maze
+		'''
 		list_of_items = configuration.ITEMS_TO_PICKED.copy()
 		hallways_copy = hallways.copy()
 		items_positions = dict()
