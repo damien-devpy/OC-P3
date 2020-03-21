@@ -7,31 +7,37 @@ class Items:
 	'''
 
 	def __init__(self, decor_object):
-		self.positions = self._dropping_items(decor_object.hallways)
-		self.items_carried = 0
+		self.decor_object = decor_object
+		self.positions = self._dropping_items()
+		self.items_carried = list()
 		
 		
-	def _dropping_items(self, hallways):
+	def _dropping_items(self):
 		'''
 		Choose (number of items) random position in decor_object.hallways
 		for dropping them in the maze
 		'''
 		list_of_items = (item for item in configuration.ITEMS_TO_PICKED.keys())
-		hallways_copy = hallways.copy()
+		hallways_copy = self.decor_object.hallways.copy()
+		hallways_copy.discard(self.decor_object.enter)
+		hallways_copy.discard(self.decor_object.exit_maze)
 		items_positions = dict()
 		
+		#For each items to dropped	
 		for i in configuration.ITEMS_TO_PICKED:
-			#For each items to dropped
-			random_position = random.sample(hallways_copy, 1)[0]
 			#Choosing one hallway cell randomly
-			hallways_copy.discard(random_position) 
+			random_position = random.sample(hallways_copy, 1)[0]
 			#Removing choosed position, avoiding choising the same more then once
-			items_positions[random_position] = next(list_of_items)
+			hallways_copy.discard(random_position) 
 			#Assigning our item the position choosen
+			items_positions[random_position] = next(list_of_items)
+			
 		return items_positions
 			
 		
 	def picked_up_items(self, coordinates):
-		#Item picked up, changing is coordinates to 0
+		'''
+		Counting items carried an taking care off removing them from display
+		'''
+		self.items_carried.append(self.positions[coordinates])
 		del self.positions[coordinates]
-		self.items_carried += 1

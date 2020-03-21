@@ -9,17 +9,24 @@ EXIT_MAZE = 'X'
 SIZE_MAZE = 15
 
 #User controls
-UP = 'z'
-RIGHT = 'd'
-DOWN = 's'
-LEFT = 'q'
+UP = ('up', 'z')
+RIGHT = ('right', 'd')
+DOWN = ('down', 's')
+LEFT = ('left', 'q')
 
 #Display configuration
 WALLS_TO_DISPLAY = '#' #Choosing how we want to display walls
 HALLWAYS_TO_DISPLAY = ' ' #Choosing how we want to display hallways
 
 ITEMS_TO_PICKED = {
-					'syringe': '>', 
-					'pipe': '-', 
-					'ether': 'o',
+					'syringe.png': '>', 
+					'pipe.png': '-', 
+					'ether.png': 'o',
 				}
+				
+SIZE_SPRITES = 35
+
+TOTAL_SIZE = SIZE_MAZE * SIZE_SPRITES
+
+WIN = 'Congratulations, you win !'
+LOOSE = 'The guard killed you, pick up more stuff!'

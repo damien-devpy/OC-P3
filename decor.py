@@ -34,6 +34,7 @@ class Decor:
 					elif letter == configuration.ENTER:
 						#Creating enter
 						self.enter = (j, i)
+						self.hallways.add((j, i))
 					elif letter == configuration.EXIT_MAZE:
 						#Creating exit
 						self.exit_maze = (j, i)

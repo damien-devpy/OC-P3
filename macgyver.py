@@ -12,6 +12,7 @@ class MacGyver:
 		'''
 		self.decor_object = decor_object
 		self.position = self.decor_object.enter
+		self.alive = True
 		
 		
 	def _up(self):
@@ -55,14 +56,15 @@ class MacGyver:
 		Making move MacGyver and checking if he's going into a wall
 		If so, going to previous_position
 		'''
-		if input_user == configuration.UP:
-			self._up()
-		elif input_user == configuration.RIGHT:
-			self._right()
-		elif input_user == configuration.DOWN:
-			self._down()
-		elif input_user == configuration.LEFT:
-			self._left()
+		if self.alive:
+			if input_user in configuration.UP:
+				self._up()
+			elif input_user in configuration.RIGHT:
+				self._right()
+			elif input_user in configuration.DOWN:
+				self._down()
+			elif input_user in configuration.LEFT:
+				self._left()
 
 		#If we move into a wall, we going back
 		if self.decor_object.is_not_hallways(self):
@@ -72,7 +74,7 @@ class MacGyver:
 		'''
 		Mac has been killed by guard. Deleting his position
 		'''
-		self.position = 0
+		self.alive = False
 		
 	
 		
