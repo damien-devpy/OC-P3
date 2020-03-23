@@ -5,7 +5,6 @@ from items import Items
 from guard import Guard
 from displayterminalmode import DisplayTerminalMode
 from displaygraphicmode import DisplayGraphicMode
-import os
 	
 def terminal_mode():
 	'''
@@ -55,8 +54,6 @@ def terminal_mode():
 				displaying.refresh()
 				print(f'{configuration.LOOSE}\n')
 				break
-	
-	os.system('pause')
 	
 def graphic_mode():
 	'''
