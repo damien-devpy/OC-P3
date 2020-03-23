@@ -2,10 +2,16 @@ import configuration
 
 class DisplayTerminalMode:
 	'''
-	Displaying the game in terminal mode
+	Displaying the game in the terminal
 	'''
 	
-	def __init__(self, decor_object, macgyver_object, items_object, guard_object):
+	def __init__(self, 
+		decor_object, 
+		macgyver_object, 
+		items_object, 
+		guard_object
+	):
+	
 		self.decor_object = decor_object
 		self.macgyver_object = macgyver_object
 		self.items_object = items_object
@@ -33,7 +39,10 @@ class DisplayTerminalMode:
 					self._display_mac()
 				elif (length, height) in self.items_object.positions:
 					#If coordinates matches an item position, display it
-					self._display_items((length, height), self.items_object.positions)
+					self._display_items(
+						(length, height), 
+						self.items_object.positions
+					)
 				elif (length, height) == self.guard_object.position:
 					#If coordinates matches an guard position, display him
 					self._display_guard()

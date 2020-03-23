@@ -43,6 +43,5 @@ class Decor:
 	def is_not_hallways(self, macgyver_object):
 		'''
 		Checking if coordinates wanted by user are an hallway or walls.
-		Return True for hallway
 		'''
 		return macgyver_object.position not in self.hallways
