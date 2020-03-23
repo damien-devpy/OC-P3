@@ -33,7 +33,7 @@ class DisplayTerminalMode:
 			for length in range(configuration.SIZE_MAZE):
 				
 				if (((length, height) == self.macgyver_object.position)
-					and self.macgyver_object.alive
+						and self.macgyver_object.alive
 					):
 					#If coordinates matches MacGyver position, display him
 					self._display_mac()
