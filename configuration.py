@@ -1,27 +1,33 @@
-#File to load
+'''
+Contain useful information for running MacGyver maze
+Such as maze size, items to display, control keys, ...
+'''
+
+# File to load
 FILE = 'structure.maze'
 
-#File configuration
-WALLS = '#' #How walls are define in maze file
-HALLWAYS = ' ' #How walls are define in maze file
-ENTER = 'E' 
+# File configuration
+WALLS = '#'  # How walls are define in maze file
+HALLWAYS = ' '  # How walls are define in maze file
+ENTER = 'E'
 EXIT_MAZE = 'X'
-SIZE_MAZE = 15 #This value can be changed to display another maze from another file
+# This value can be changed to display another maze from another file
+SIZE_MAZE = 15
 
-#User controls
+# User controls
 UP = ('up', 'z')
 RIGHT = ('right', 'd')
 DOWN = ('down', 's')
 LEFT = ('left', 'q')
 
-#Display configuration
-WALLS_TO_DISPLAY = '#' #Choosing how we want to display walls
-HALLWAYS_TO_DISPLAY = ' ' #Choosing how we want to display hallways
+# Display configuration
+WALLS_TO_DISPLAY = '#'  # Choosing how we want to display walls
+HALLWAYS_TO_DISPLAY = ' '  # Choosing how we want to display hallways
 
 ITEMS_TO_PICKED = {
-	'syringe.png': '>', 
-	'pipe.png': '-', 
-	'ether.png': 'o',
+    'syringe.png': '>',
+    'pipe.png': '-',
+    'ether.png': 'o',
 }
 
 SIZE_SPRITES = 35
