@@ -10,6 +10,7 @@ Install instructions :
 - Install python3.7
 - Install pipenv
 - run "pipenv install"
-- run "pipenv run python 3.7 main.py"
+- run "pipenv shell"
+- run "python3 -m main" (Linux) or "py -m main" (Windows)
 - Have fun !
 
