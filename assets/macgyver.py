@@ -57,7 +57,7 @@ class MacGyver:
     def movement(self, input_user, previous_position):
         '''
         Making move MacGyver and checking if he's going into a wall
-        If so, going to previous_position
+        If so, going back to the previous_position
         '''
         if self.alive:
             if input_user in UP:
@@ -75,6 +75,6 @@ class MacGyver:
 
     def killing_mac(self):
         '''
-        Mac has been killed by guard. Deleting his position
+        Mac has been killed by guard.
         '''
         self._alive = False

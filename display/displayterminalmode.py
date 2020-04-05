@@ -4,7 +4,10 @@ Get instances of Decor(), MacGyver(), Items() and Guard() classes for
 displaying
 '''
 
-from configuration import SIZE_MAZE, HALLWAYS_TO_DISPLAY, WALLS_TO_DISPLAY, ITEMS_TO_PICKED
+from configuration import (SIZE_MAZE,
+                           HALLWAYS_TO_DISPLAY,
+                           WALLS_TO_DISPLAY,
+                           ITEMS_TO_PICKED,)
 
 
 class DisplayTerminalMode:
@@ -27,11 +30,9 @@ class DisplayTerminalMode:
         '''
         Call to display_decor() at each move to refresh display
         '''
-
         self._display_decor()
 
     def _display_decor(self):
-
         '''
         Display decor considering position of MacGyver, items and guard
         '''

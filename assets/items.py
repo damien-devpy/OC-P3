@@ -33,6 +33,8 @@ class Items:
         for dropping them in the maze
         '''
         hallways_copy = self.decor_object.hallways.copy()
+        # We don't want items dropped into enter/exit
+        # removing there position from the hallways set
         hallways_copy.discard(self.decor_object.enter)
         hallways_copy.discard(self.decor_object.exit_maze)
         items_positions = dict()

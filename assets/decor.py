@@ -15,7 +15,6 @@ class Decor:
         Calling private method that recovering structure of maze
         and initializing suitable attributes
         '''
-
         self._get_structure_of_maze(maze_file)
 
     def _get_structure_of_maze(self, maze_file):

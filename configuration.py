@@ -8,7 +8,7 @@ FILE = 'structure.maze'
 
 # File configuration
 WALLS = '#'  # How walls are define in maze file
-HALLWAYS = ' '  # How walls are define in maze file
+HALLWAYS = ' '  # How hallways are define in maze file
 ENTER = 'E'
 EXIT_MAZE = 'X'
 # This value can be changed to display another maze from another file

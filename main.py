@@ -82,12 +82,12 @@ def graphic_mode():
             stuff.picked_up_items(hero.position)
             displaying.counter()
 
-        # After each move, we refreshin the display
+        # After each move, we refreshing the display
         displaying.refresh()
 
         # Waiting for input user
         continuer, choice = displaying.input_user()
-        
+
         # Moving MacGyver according user choice
         previous_position = hero.position
         hero.movement(choice, previous_position)
@@ -120,11 +120,12 @@ def main():
 
     while not input_ok:
         try:
-            input_user = int(input('In wich mode do you want to play ?\n'))
+            input_user = int(input("In wich mode do you want to play ?\n"))
             print()
             input_ok = True
         except ValueError:
-            print("\n0: Terminal mode (Use ZQSD keys + ENTER to move, 'exit' to quit)")
+            print("\n0: Terminal mode (Use ZQSD keys + ENTER to move, \
+                  'exit' to quit)")
             print("1: Graphic mode (Use arrow keys to move, ESCAPE to quit)\n")
 
     if input_user:
